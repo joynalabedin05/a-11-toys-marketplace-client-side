@@ -3,7 +3,7 @@ import { FaTwitter } from 'react-icons/fa';
 const FeedBack = () => {
     return (
         <div className='mx-20 mt-12 mb-10 '>
-           <h3 className="text-center text-4xl mb-12 text-orange-800 ">What People Say</h3> 
+           <h3 className="text-center text-4xl mb-12 text-orange-800 ">Whats Clients Say</h3> 
            <div className='grid md:grid-cols-2 gap-20 bg-slate-700 p-14 rounded-xl'>
             <div className='text-xl space-y-4 relative '>
                 <img className='rounded-full w-[60px] absolute -left-8 -top-8' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv7sCe3BYgPLjIvTRVehjn3o4Fx2VklDVR9yDdfwuDK4Q9_pAlkujq3Tst--k6yzalO-o&usqp=CAU" alt="" />
