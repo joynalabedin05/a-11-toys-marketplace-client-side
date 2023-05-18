@@ -8,6 +8,7 @@ import {
 import Main from './routes/Main';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home/Home';
+import Blogs from './pages/Blogs';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,11 @@ const router = createBrowserRouter([
     children:[
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       }
     ]
   },

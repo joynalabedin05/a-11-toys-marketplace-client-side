@@ -4,7 +4,7 @@ const Gallery = () => {
     return (
         <div className="mx-16 mt-8">
             <h3 className="text-center mb-10 text-4xl text-orange-800">Feature Gallery</h3>
-            <div className="grid md:grid-cols-3 gap-8 bg-slate-700 p-5">
+            <div className="grid md:grid-cols-3 gap-8 rounded bg-slate-700 p-5">
                 <div className="hover:skew-y-3">
                     <img className="w-full rounded " src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/McLaren_P1.jpg/800px-McLaren_P1.jpg" alt="" />
                 </div>
