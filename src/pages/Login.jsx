@@ -1,13 +1,44 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContex } from "../provider/AuthProvider";
 
 
 const Login = () => {
+    const {signIn, googleSignin} = useContext(AuthContex);
+    const handleLogin = event =>{
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email,password);
+        signIn(email, password)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+            form.reset();
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }
+
+    const handleGoogle = ()=>{
+        googleSignin()
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }
     return (
         <div className=" bg-base-200 py-8">
             <div className="md:w-1/2 mx-auto ">
                 <h4 className=" text-center font-bold text-4xl mb-6">Please Login?</h4>
                 <div className="card w-full shadow-2xl bg-base-100">
-                    <div className="card-body w-full">
+                    <form onSubmit={handleLogin} className="card-body w-full">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -35,10 +66,10 @@ const Login = () => {
                             </div>
                             <div className="divider">OR</div>
                             <div className="grid p-3  card bg-base-300 rounded-box place-items-center">
-                                <button className=" text-xl font-bold w-full">Google SignIn</button>
+                                <button onClick={handleGoogle} className=" text-xl font-bold w-full">Google SignIn</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
