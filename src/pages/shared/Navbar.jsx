@@ -42,7 +42,7 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
           <li tabIndex={0}>
             <a>
-              About
+              All Toys
               
             </a>
            
@@ -52,6 +52,8 @@ const Navbar = () => {
               user? 
               <div className='flex'>
                 <span className='mx-3 tooltip' data-tip={user?.displayName}><img className='w-14' src={user?.photoURL} alt="" /></span>
+                <Link>My Toys</Link>
+                <Link className='mx-3'>Add a Toys</Link>
                 <button onClick={logout}>LouOut</button>
               </div> :
               <li><Link to='/login'>Login</Link></li>
