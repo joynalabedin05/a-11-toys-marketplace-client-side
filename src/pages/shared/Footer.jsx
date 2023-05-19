@@ -6,7 +6,8 @@ import { FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="footer p-16 bg-base-200 text-base-content">
+       <div>
+         <footer className="footer p-16 bg-base-200 text-base-content">
             <div>
                 <p> 
                 <img className='w-16 mb-3' src={logo} alt="" />
@@ -40,6 +41,13 @@ const Footer = () => {
                </div>
             </div>
         </footer>
+        <div className='bg-slate-600 w-1/2 mx-auto h-[3px]'>
+            <hr />
+        </div>
+        <div className='my-6 text-center'>
+            All rights reserved by @ Norev Industries Ltd developed by tecnical team in 1992 
+        </div>
+       </div>
     );
 };
 
