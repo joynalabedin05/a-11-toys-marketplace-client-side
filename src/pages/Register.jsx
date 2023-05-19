@@ -7,9 +7,9 @@ import { AuthContex } from "../provider/AuthProvider";
 // https://xsgames.co/randomusers/assets/avatars/male/46.jpg
 const Register = () => {
     // const auth = getAuth(app);
-    const {createUser, updateUser} = useContext(AuthContex);
+    const {createUser} = useContext(AuthContex);
     const [error, setError] =useState();
-    const [user, setUser] = useState();
+    const [setUser] = useState();
     const handleSignup = event =>{
         event.preventDefault();
         const form = event.target;
@@ -34,15 +34,7 @@ const Register = () => {
             console.log(error);
         })
 
-        updateUser(user, {
-            displayName: 'any', PhotoURL: 'https://xsgames.co/randomusers/assets/avatars/male/46.jpg'
-        })
-        .then(result=>{
-            console.log(result)
-        })
-        .catch(error=>{
-            console.log(error)
-        })
+       
     }
 
     
