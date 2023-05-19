@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 import logo from '../../../public/norev.png';
+import { useContext } from 'react';
+import { AuthContex } from '../../provider/AuthProvider';
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContex);
+  const logout =()=>{
+    logOut();
+  }
     return (
       <div className="navbar bg-base-100 p-12">
       <div className="navbar-start">
@@ -19,7 +25,12 @@ const Navbar = () => {
              
             </li>
             <li><Link to='/blogs'>Blogs</Link></li>
-            <li><Link to='/login'>Login</Link></li>
+            {
+              user? 
+              <button>LouOut</button> :
+              <li><Link to='/login'>Login</Link></li>
+            }
+
           </ul>
         </div>
         <Link className="">
@@ -37,7 +48,11 @@ const Navbar = () => {
            
           </li>
           <li><Link to='/blogs'>Blogs</Link></li>
-          <li><Link to='/login'>Login</Link></li>
+          {
+              user? 
+              <button onClick={logout}>LouOut</button> :
+              <li><Link to='/login'>Login</Link></li>
+            }
         </ul>
       </div>
       <div className="navbar-end">

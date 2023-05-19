@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContex } from "../provider/AuthProvider";
 
 
 const Register = () => {
     const {createUser} = useContext(AuthContex);
+    const [error, setError] =useState();
     const handleSignup = event =>{
         event.preventDefault();
         const form = event.target;
@@ -13,6 +14,10 @@ const Register = () => {
         const photo = form.photo.value;
         const password = form.password.value;
         console.log(name,email,password, photo);
+
+        if(password.length< 6){
+            return setError('Password must be 6 characters')
+        }
 
         createUser(email, password)
         .then(result=>{
@@ -60,6 +65,9 @@ const Register = () => {
                         <div className="form-control mt-6">
                         <input type="submit" className="btn btn-primary" value="Register" />
                         </div>
+                        <p className="text-xl text-red-600">
+                            {error}
+                        </p>
                         
                         <div className="flex flex-col md:w-1/2 mx-auto mt-4 border-opacity-50">
                             <div className="grid w-full p-3 card bg-base-300 rounded-box place-items-center">
