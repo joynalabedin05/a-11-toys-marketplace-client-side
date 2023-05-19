@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContex } from "../provider/AuthProvider";
+// import { useState } from "react";
 
 
 const Login = () => {
     const {signIn, googleSignin} = useContext(AuthContex);
+    // const [user, setUser] = useState();
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -72,6 +74,7 @@ const Login = () => {
                     </form>
                 </div>
             </div>
+            
         </div>
     );
 };

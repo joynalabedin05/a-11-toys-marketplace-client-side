@@ -50,7 +50,10 @@ const Navbar = () => {
           <li><Link to='/blogs'>Blogs</Link></li>
           {
               user? 
-              <button onClick={logout}>LouOut</button> :
+              <div className='flex'>
+                <span className='mx-3 tooltip' data-tip={user?.displayName}><img className='w-14' src={user?.photoURL} alt="" /></span>
+                <button onClick={logout}>LouOut</button>
+              </div> :
               <li><Link to='/login'>Login</Link></li>
             }
         </ul>
