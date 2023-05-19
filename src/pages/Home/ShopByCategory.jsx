@@ -1,25 +1,35 @@
+
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 const ShopByCategory = () => {
     return (
-        <div className='mx-16 mt-12 bg-slate-200 p-3 text-xl rounded w-1/2 mx-auto font-semi-bold'>
+        <div className='mx-16 mt-12 bg-slate-600 text-white p-5 text-xl rounded  font-semi-bold'>
             <Tabs>
                 <TabList>
-                    <Tab>Title 1</Tab>
-                    <Tab>Title 2</Tab>
-                    <Tab>Title 3</Tab>
+                    <Tab>Sports Car</Tab>
+                    <Tab>Regular Car</Tab>
+                    <Tab>Police Car</Tab>
                 </TabList>
 
-                <TabPanel>
-                    <h2>Any content 1</h2>
+                <TabPanel className='space-x-4 mt-5'>
+                    <button className='btn btn-primary'>standard sports cars</button>
+                    <button className='btn btn-primary'>high-performance sports</button>
+                    <button className='btn btn-primary'>supercars</button>
                 </TabPanel>
-                <TabPanel>
-                    <h2>Any content 2</h2>
+                <TabPanel className='space-x-4 mt-5'>
+                    <button className='btn btn-primary'>Hatchback</button>
+                    <button className='btn btn-primary'>Sedan</button>
+                    <button className='btn btn-primary'>Pickup Truck</button>
                 </TabPanel>
-                <TabPanel>
-                    <h2>Any content 3</h2>
+                <TabPanel className='space-x-4 mt-5'>
+                    <butto className='btn btn-primary'>Patrol cars</butto>
+                    <butto className='btn btn-primary'>Armored Vehicles</butto>
+                    <butto className='btn btn-primary'>Specialty Vehicles</butto>
                 </TabPanel>
             </Tabs>
+            <div className='my-7'>
+                
+            </div>
         </div>
     );
 };
