@@ -10,6 +10,26 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => setAllToys(data))
     }, []);
+
+    const handleDelete=(id)=>{
+        const proceed = confirm('are you sure you want to delete');
+        if(proceed){
+            fetch(`http://localhost:5000/bookings/${id}`,{
+                method: 'DELETE',
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                if(data.deletedCount> 0){
+                    alert('data deleted successfully');
+                    const remaining = allToys.filter(booking=> booking._id !== id);
+                    setAllToys(remaining);
+                }
+            })
+        }
+    }
+
+
     return (
         <div>
             <h3 className="text-center text-2xl my-7 font-bold">My Added Toys </h3>
@@ -30,6 +50,7 @@ const MyToys = () => {
                         allToys.map(toys=> <MyToysDetails
                         toys={toys}
                         key={toys._id}
+                        handleDelete={handleDelete}
                         ></MyToysDetails>)
                     }                                             
                 </table>
