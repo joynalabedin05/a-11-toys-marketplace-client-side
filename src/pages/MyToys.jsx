@@ -29,7 +29,6 @@ const MyToys = () => {
         }
     }
 
-
     return (
         <div>
             <h3 className="text-center text-2xl my-7 font-bold">My Added Toys </h3>
