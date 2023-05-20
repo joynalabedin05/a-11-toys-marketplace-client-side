@@ -5,7 +5,7 @@ const WhyCar = () => {
         <div className="bg-slate-700 mt-20 ">
            <div className="mx-32 py-12">
            <h3 className="text-white text-center text-4xl mb-12">Why NOREV Car?</h3>
-            <div className="flex gap-8 ">
+            <div className="md:flex gap-8 ">
                 <div className="text-white space-y-4">
                     <img className="w-16" src="https://media.istockphoto.com/id/1206806317/vector/shopping-cart-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=1RRQJs5NDhcB67necQn1WCpJX2YMfWZ4rYi1DFKlkNA=" alt="" />
                     <h3 className="text-xl">Transparent pricing</h3>

@@ -17,6 +17,7 @@ import ToysDetails from './pages/ToysDetails';
 import AddAToy from './pages/AddAToy';
 import MyToys from './pages/MyToys';
 import UpdateToys from './pages/UpdateToys';
+import PrivateRoute from './routes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -45,27 +46,25 @@ const router = createBrowserRouter([
       },
       {
         path: "/toydetails/:id",
-        element: <ToysDetails></ToysDetails>,
-        loader: ({params})=>fetch(`http://localhost:5000/toydetail/${params.id}`)
+        element: <PrivateRoute><ToysDetails></ToysDetails></PrivateRoute>,
+        loader: ({params})=>fetch(`https://a-11-toys-marketplace-server.vercel.app/toydetail/${params.id}`)
        
       },
       {
         path: "/books",
-        element: <AddAToy></AddAToy>,
+        element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>,
        
       },
       {
         path: "/mytoys",
-        element: <MyToys></MyToys>,
+        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
        
       },
       {
         path: "/update/:id",
-        element: <UpdateToys></UpdateToys>,
-        loader: ({params})=> fetch(`http://localhost:5000/toydetail/${params.id}`)
-       
-      },
-     
+        element: <PrivateRoute><UpdateToys></UpdateToys></PrivateRoute>,
+        loader: ({params})=> fetch(`https://a-11-toys-marketplace-server.vercel.app/toydetail/${params.id}`)      
+      },    
     ]
   },
   {

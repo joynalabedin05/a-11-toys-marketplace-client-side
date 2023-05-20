@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../provider/AuthProvider";
 // import { useState } from "react";
 
@@ -7,6 +7,11 @@ import { AuthContex } from "../provider/AuthProvider";
 const Login = () => {
     const {signIn, googleSignin} = useContext(AuthContex);
     // const [user, setUser] = useState();
+    const location  = useLocation()
+    console.log(location);
+    const from = location.state?.from?.pathname || '/';
+    const nagivate = useNavigate();
+
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -18,6 +23,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            nagivate(from, {replace: true});
         })
         .catch(error=>{
             console.log(error);
@@ -29,6 +35,7 @@ const Login = () => {
         .then(result=>{
             const user = result.user;
             console.log(user);
+            nagivate(from, {replace: true});
 
         })
         .catch(error=>{

@@ -24,7 +24,7 @@ const AddAToy = () => {
         }
         console.log(booking);
 
-        fetch('http://localhost:5000/bookings',{
+        fetch('https://a-11-toys-marketplace-server.vercel.app/bookings',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
