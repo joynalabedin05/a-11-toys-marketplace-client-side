@@ -1,24 +1,18 @@
 import { useEffect, useState } from "react";
-import AllToy from "./AllToy";
-// import MyToysDetails from "./MyToysDetails";
+import MyToysDetails from "./MyToysDetails";
 
 
-const AllToys = () => {
-    const [allToys, setAllToys] = useState([]); 
+const MyToys = () => {
+    const [allToys, setAllToys] = useState([]);
     // console.log(allToys);
     useEffect(() => {
         fetch('http://localhost:5000/alltoys')
             .then(res => res.json())
             .then(data => setAllToys(data))
     }, []);
-
-    // console.log(toys);
     return (
         <div>
-            <div className="w-1/2 mx-auto flex gap-1 mt-5 mb-7">
-                <input type="text" className="bg-gray-100 rounded p-5 w-full" name="" id="" />
-                <button className="btn py-6">Search</button>
-            </div>          
+            <h3 className="text-center text-2xl my-7 font-bold">My Added Toys </h3>
             <div className="overflow-x-auto mx-14">
                 <table className="table table-compact w-full">
                     <thead>
@@ -28,14 +22,15 @@ const AllToys = () => {
                             <th>Available Quantity</th>
                             <th>Price</th>
                             <th>Button</th>
+                            <th>Button</th>
                             
                         </tr>
                     </thead>
                     {
-                        allToys.map(toys=> <AllToy
+                        allToys.map(toys=> <MyToysDetails
                         toys={toys}
                         key={toys._id}
-                        ></AllToy>)
+                        ></MyToysDetails>)
                     }                                             
                 </table>
             </div>
@@ -43,4 +38,4 @@ const AllToys = () => {
     );
 };
 
-export default AllToys;
+export default MyToys;

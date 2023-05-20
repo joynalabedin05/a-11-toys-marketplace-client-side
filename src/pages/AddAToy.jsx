@@ -1,20 +1,26 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import { AuthContex } from "../provider/AuthProvider";
+
 
 const AddAToy = () => {
     const { user } = useContext(AuthContex);
     const handleBookService = (event) => {
         event.preventDefault();
         const form = event.target;
-        const name = form.sellername.value;
+        const seller_name = form.sellername.value;
+        const name = form.name.value;
         const price = form.price.value;
-        const subCategory = form.subcategory.value;
+        const sub_category
+        = form.subcategory.value;
         const ratinng = form.rating.value;
         const email = form.email.value;
-        const availableQuantity = form.quantity.value;
+        const available_quantity = form.quantity.value;
         const description = form.description.value;
+        const picture = form.photo.value;
         const booking = {
-            name,price,subCategory,ratinng,email,availableQuantity,description
+            seller_name,picture,
+            name,price,sub_category
+            ,ratinng,email,available_quantity,description
         }
         console.log(booking);
 
@@ -46,6 +52,19 @@ const AddAToy = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Toy name</span>
+                        </label>
+                        <input type="text" name="name" placeholder="i.e Toy car-1" className="input input-bordered" />
+
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
                             <span className="label-text">Price</span>
                         </label>
                         <input type="text" name="price" placeholder="i.e $15.67" className="input input-bordered" />
@@ -62,20 +81,21 @@ const AddAToy = () => {
                         <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
-                        <input type="number" placeholder="ie 4.5" name="rating" className="input input-bordered" />
+                        <input type="text" placeholder="ie 4.5" name="rating" className="input input-bordered" />
 
                     </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
-                    </div>
+                   
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Available Quantity</span>
                         </label>
                         <input type="number" placeholder="i.e  7" name="quantity" className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Photo Url</span>
+                        </label>
+                        <input type="text" placeholder="photo url" name="photo" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -85,7 +105,7 @@ const AddAToy = () => {
                     </div>
                 </div>
                 <div className="form-control mt-6">
-                    <input type="submit" className="btn btn-block" value="Add to Cart" />
+                <input type="submit" className="btn btn-block" value="Add to Cart" />
                 </div>
             </form>
             <div className="card-body">

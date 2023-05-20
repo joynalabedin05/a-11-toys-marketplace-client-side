@@ -15,6 +15,7 @@ import AuthProvider from './provider/AuthProvider';
 import AllToys from './pages/AllToys';
 import ToysDetails from './pages/ToysDetails';
 import AddAToy from './pages/AddAToy';
+import MyToys from './pages/MyToys';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
       {
         path: "/books",
         element: <AddAToy></AddAToy>,
+       
+      },
+      {
+        path: "/mytoys",
+        element: <MyToys></MyToys>,
        
       },
      

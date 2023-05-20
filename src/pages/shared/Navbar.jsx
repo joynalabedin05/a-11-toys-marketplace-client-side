@@ -49,7 +49,7 @@ const Navbar = () => {
               user? 
               <div className='flex'>
                 <span className='mx-3 tooltip' data-tip={user?.displayName}><img className='w-14' src={user?.photoURL} alt="" /></span>
-                <Link>My Toys</Link>
+                <Link to='/mytoys'>My Toys</Link>
                 <Link to='/books' className='mx-3'>Add a Toys</Link>
                 <button onClick={logout}>LouOut</button>
               </div> :

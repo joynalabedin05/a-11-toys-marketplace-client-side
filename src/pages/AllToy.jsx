@@ -1,26 +1,22 @@
 import { Link } from "react-router-dom";
 
 
-const AllToy = ({ alltoy }) => {
+const AllToy = ({ toys }) => {
     
     const { _id, name, sub_category, available_quantity, price
-    } = alltoy;
-
+    } = toys;
 
     return (
-        <div>
-           
-            <div>
-                <span className="mx-12 rounded bg-slate-700 text-white p-4 my-4">{name}</span>
-                <span className="mx-12 rounded bg-slate-700 text-white p-4 my-4">{sub_category}</span>
-                <span className="mx-12 rounded bg-slate-700 text-white p-4 my-4">{available_quantity
-                }</span>
-                <span className="mx-12 rounded bg-slate-700 text-white p-4 my-4">{price}</span>
-                <Link to={`/toydetails/${_id}`}><button className="mx-12 rounded bg-slate-700 text-white p-4 my-4">View details</button></Link>
-            </div>
-
-
-        </div>
+        <tbody>
+        <tr>
+            <th className="px-5 py-6">{name}</th>
+            <td className="px-5 py-6">{sub_category}</td>
+            <td className="px-5 py-6">{available_quantity}</td>
+            <td className="px-5 py-6">{price}</td>
+            <Link to={`/toydetails/${_id}`}><button className="mx-12 rounded bg-slate-700 text-white p-4 my-4">View details</button></Link> 
+            
+        </tr>
+        </tbody>
     )
 };
 
