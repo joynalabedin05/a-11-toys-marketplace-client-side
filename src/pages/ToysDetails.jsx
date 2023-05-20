@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 const ToysDetails = () => {
    const toys = useLoaderData();
-   console.log(toys);
+   console.log(toys._id);
     return (
         <div className="mx-16 my-6">
             <div className="bg-slate-500 p-12 mx-auto rounded text-white">
@@ -11,6 +11,7 @@ const ToysDetails = () => {
                 <p>Price: {toys.price}</p>
                 <p>Available quantity: {toys.available_quantity}</p>
                 <p>Rating: {toys.rating}</p>
+                
             </div>
             
         </div>
