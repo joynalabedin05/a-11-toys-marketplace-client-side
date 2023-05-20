@@ -1,8 +1,10 @@
 import { useContext} from "react";
 import { AuthContex } from "../provider/AuthProvider";
+import useTitle from "../hooks/UseTitle";
 
 
 const AddAToy = () => {
+    useTitle('Add A Toy');
     const { user } = useContext(AuthContex);
     const handleBookService = (event) => {
         event.preventDefault();
@@ -22,7 +24,7 @@ const AddAToy = () => {
             name,price,sub_category
             ,ratinng,email,available_quantity,description
         }
-        console.log(booking);
+        // console.log(booking);
 
         fetch('https://a-11-toys-marketplace-server.vercel.app/bookings',{
             method: 'POST',

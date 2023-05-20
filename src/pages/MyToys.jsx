@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import MyToysDetails from "./MyToysDetails";
+import useTitle from "../hooks/UseTitle";
 
 
 const MyToys = () => {
     const [allToys, setAllToys] = useState([]);
     // console.log(allToys);
+    useTitle('My Toys')
     useEffect(() => {
         fetch('https://a-11-toys-marketplace-server.vercel.app/alltoys')
             .then(res => res.json())
@@ -32,7 +34,7 @@ const MyToys = () => {
     return (
         <div>
             <h3 className="text-center text-2xl my-7 font-bold">My Added Toys </h3>
-            <div className="overflow-x-auto mx-14">
+            <div className="overflow-x-auto mx-24 mb-5">
                 <table className="table table-compact w-full">
                     <thead>
                         <tr>  

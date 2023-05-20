@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import AllToy from "./AllToy";
+import useTitle from "../hooks/UseTitle";
 // import MyToysDetails from "./MyToysDetails";
 
 
 const AllToys = () => {
     const [allToys, setAllToys] = useState([]); 
     // console.log(allToys);
+    useTitle('All Toys')
     useEffect(() => {
         fetch('https://a-11-toys-marketplace-server.vercel.app/alltoys')
             .then(res => res.json())

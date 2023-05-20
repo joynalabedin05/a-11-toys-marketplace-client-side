@@ -3,7 +3,7 @@
 const WhyCar = () => {
     return (
         <div className="bg-slate-700 mt-20 ">
-           <div className="mx-32 py-12">
+           <div className="md:mx-32 mx-4 py-12">
            <h3 className="text-white text-center text-4xl mb-12">Why NOREV Car?</h3>
             <div className="md:flex gap-8 ">
                 <div className="text-white space-y-4">

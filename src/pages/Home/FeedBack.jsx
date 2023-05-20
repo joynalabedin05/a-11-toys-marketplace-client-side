@@ -2,7 +2,7 @@
 import { FaTwitter } from 'react-icons/fa';
 const FeedBack = () => {
     return (
-        <div className='mx-20 mt-12 mb-10 '>
+        <div className='md:mx-20 mt-12 mb-10 '>
            <h3 className="text-center text-4xl mb-12 text-orange-800 ">Whats Clients Say</h3> 
            <div className='grid md:grid-cols-2 gap-20 bg-slate-700 p-14 rounded-xl'>
             <div className='text-xl space-y-4 relative '>
@@ -10,7 +10,7 @@ const FeedBack = () => {
                 <div className='bg-gray-300 space-y-4  p-3 rounded'>
                     <p>“@TrueCar seriously helped me with my car deal. Anyone looking to get a car should just use it. #lifesaver”</p>
                     <p>Athziri</p>
-                    <div className='flex items-center gap-2'>
+                    <div className='md:flex items-center gap-2'>
                         <FaTwitter  />
                         <span>@Cee_OhWhattt</span>
                     </div>
@@ -21,7 +21,7 @@ const FeedBack = () => {
                 <div className='bg-gray-300 space-y-4 p-3 rounded'>
                     <p>“@TrueCar seriously helped me with my car deal. Anyone looking to get a car should just use it. #lifesaver”</p>
                     <p>Athziri</p>
-                    <div className='flex items-center gap-2'>
+                    <div className='md:flex items-center gap-2'>
                         <FaTwitter  />
                         <span>@Cee_OhWhattt</span>
                     </div>
@@ -32,7 +32,7 @@ const FeedBack = () => {
                 <div className='bg-gray-300 space-y-4 p-3 rounded'>
                     <p>“@TrueCar seriously helped me with my car deal. Anyone looking to get a car should just use it. #lifesaver”</p>
                     <p>Athziri</p>
-                    <div className='flex items-center gap-2'>
+                    <div className='md:flex items-center gap-2'>
                         <FaTwitter  />
                         <span>@Cee_OhWhattt</span>
                     </div>
@@ -43,7 +43,7 @@ const FeedBack = () => {
                 <div className='bg-gray-300 space-y-4 p-3 rounded'>
                     <p>“@TrueCar seriously helped me with my car deal. Anyone looking to get a car should just use it. #lifesaver”</p>
                     <p>Athziri</p>
-                    <div className='flex items-center gap-2'>
+                    <div className='md:flex items-center gap-2'>
                         <FaTwitter  />
                         <span>@Cee_OhWhattt</span>
                     </div>

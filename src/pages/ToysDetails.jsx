@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../hooks/UseTitle";
 
 const ToysDetails = () => {
+    useTitle('Single Toy')
    const toys = useLoaderData();
-   console.log(toys._id);
+//    console.log(toys._id);
     return (
         <div className="mx-16 my-6">
             <div className="bg-slate-500 p-12 mx-auto rounded text-white">

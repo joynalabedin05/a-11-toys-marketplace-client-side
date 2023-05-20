@@ -9,7 +9,7 @@ const Navbar = () => {
     logOut();
   }
     return (
-      <div className="navbar bg-base-100 p-12">
+      <div className="navbar bg-base-100 px-12 my-8">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,18 +27,19 @@ const Navbar = () => {
             <li><Link to='/blogs'>Blogs</Link></li>
             {
               user? 
-              <button>LouOut</button> :
+              <li><button>LouOut</button></li> :
               <li><Link to='/login'>Login</Link></li>
             }
 
           </ul>
         </div>
-        <Link className="">
-          <img className='w-32' src={logo} alt="" />
+        <Link className="flex gap-2">
+          <img className='w-8' src={logo} alt="" />
+          <h3 className='font-bold text-2xl'><span className='text-4xl text-blue-700'>N</span>OREV</h3>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal">
         <li><Link to='/'>Home</Link></li>
           <li tabIndex={0}>
           <Link to='/allToys'>All Toys</Link>
@@ -48,17 +49,17 @@ const Navbar = () => {
           {
               user? 
               <div className='flex'>
-                <span className='mx-3 tooltip' data-tip={user?.displayName}><img className='w-14' src={user?.photoURL} alt="" /></span>
-                <Link to='/mytoys'>My Toys</Link>
-                <Link to='/books' className='mx-3'>Add a Toys</Link>
+                <span className=' tooltip' data-tip={user?.displayName}><img className='w-10' src={user?.photoURL} alt="" /></span>
+               <li> <Link to='/books'>Add a Toys</Link></li>              
+                <li><Link to='/mytoys'>My Toys</Link></li>
                 <button onClick={logout}>LouOut</button>
               </div> :
               <li><Link to='/login'>Login</Link></li>
             }
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Get started</a>
+      <div className="navbar-end ">
+        <a className="btn sm:d-none">Get started</a>
       </div>
     </div>
     );
