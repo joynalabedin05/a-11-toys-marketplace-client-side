@@ -59,7 +59,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end ">
-        <a className="btn sm:d-none">Get started</a>
+        <a className="btn">Get started</a>
       </div>
     </div>
     );

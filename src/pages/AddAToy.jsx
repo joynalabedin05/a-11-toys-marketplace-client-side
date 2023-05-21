@@ -42,8 +42,8 @@ const AddAToy = () => {
         })
     }
     return (
-        <div className="mx-14">
-            <h3 className="text-center text-3xl">Book service</h3>
+        <div className="px-32">
+            <h3 className="text-center text-3xl mb-3">Add A Toy</h3>
             <form onSubmit={handleBookService}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="form-control">
