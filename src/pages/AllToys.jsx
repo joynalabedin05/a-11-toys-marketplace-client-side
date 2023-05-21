@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import AllToy from "./AllToy";
 import useTitle from "../hooks/UseTitle";
+
 
 // import MyToysDetails from "./MyToysDetails";
 
 
 const AllToys = () => {
+    // console.log(user);
     const [allToys, setAllToys] = useState([]);
     const [search, setSearch]=useState('');
-     
+
     // console.log(allToys);
     useTitle('All Toys')
+
     useEffect(() => {
         fetch('https://a-11-toys-marketplace-server.vercel.app/alltoys')
             .then(res => res.json())
@@ -30,7 +33,7 @@ const AllToys = () => {
     return (
         <div>
             <div className="w-1/2 mx-auto flex gap-1 mt-2 mb-10">
-                <input onChange={(e)=>setSearch(e.target.value)} type="text" className="bg-gray-100 rounded p-3 w-full" name="" placeholder="i.e SEARCH  Ascending or descending" id="" />
+                <input onChange={(e)=>setSearch(e.target.value)} type="text" className="bg-gray-100 rounded p-3 w-full" name="" placeholder="i.e SEARCH by toy name or sub_category " id="" />
                 <button onClick={handleSearch} className="btn mx-2 py-6">Search</button>
             </div>          
             <div className="overflow-x-auto mx-32">

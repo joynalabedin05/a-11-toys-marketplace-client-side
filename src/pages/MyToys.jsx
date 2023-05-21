@@ -1,17 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import MyToysDetails from "./MyToysDetails";
+import { AuthContex } from "../provider/AuthProvider";
 import useTitle from "../hooks/UseTitle";
 
 
 const MyToys = () => {
+    const {user} = useContext(AuthContex);
+
     const [allToys, setAllToys] = useState([]);
     // console.log(allToys);
     useTitle('My Toys')
     useEffect(() => {
-        fetch('https://a-11-toys-marketplace-server.vercel.app/alltoys')
+        fetch(`https://a-11-toys-marketplace-server.vercel.app/myJobs/${user?.email}`)
             .then(res => res.json())
             .then(data => setAllToys(data))
-    }, []);
+    }, [user]);
 
     const handleDelete=(id)=>{
         const proceed = confirm('are you sure you want to delete');
